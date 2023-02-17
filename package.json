@@ -2,19 +2,12 @@
   "name": "data-structures",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
-  "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
-  },
+  "main": "src/index.ts",
   "dependencies": {
-    "parcel-bundler": "^1.6.1"
-  },
-  "devDependencies": {
     "typescript": "4.4.4"
   },
-  "resolutions": {
-    "@babel/preset-env": "7.13.8"
+  "devDependencies": {
+    "ts-node": "^10.9.1"
   },
   "keywords": []
 }
