@@ -1,10 +1,7 @@
-import { Queue } from "./Queue";
+import { BinarySearchTree } from "./BinarySearchTree";
 
-const queue = new Queue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.print();
-queue.enqueue(4);
-queue.print();
-queue.dequeue();
-queue.print();
+const bst = new BinarySearchTree();
+bst.insert(20);
+bst.insert(10);
+bst.insert(41);
+console.log(bst.contains(41));

@@ -39,27 +39,27 @@ export class Queue {
   public dequeue = (): Node | undefined => {
     if (this.length === 0) return;
 
-    const tmp = this.first!;
+    const temp = this.first!;
 
     if (this.length === 1) {
       this.first = null;
       this.last = null;
     } else {
       this.first = this.first!.next;
-      tmp.next = null;
+      temp.next = null;
     }
 
     this.length--;
-    return tmp;
+    return temp;
   };
 
   public print = (): void => {
-    let tmp = this.first;
+    let temp = this.first;
     let data = [];
 
-    while (tmp !== null) {
-      data.push(tmp.value);
-      tmp = tmp.next;
+    while (temp !== null) {
+      data.push(temp.value);
+      temp = temp.next;
     }
 
     console.log(data.join("<-"));

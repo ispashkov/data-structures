@@ -35,22 +35,22 @@ export class Stack {
   public pop = (): Node | undefined => {
     if (this.length === 0) return;
 
-    const tmp = this.top!;
+    const temp = this.top!;
     this.top = this.top!.next;
-    tmp.next = null;
+    temp.next = null;
 
     this.length--;
 
-    return tmp;
+    return temp;
   };
 
   public print = (): void => {
-    let tmp = this.top;
+    let temp = this.top;
     let data = [];
 
-    while (tmp !== null) {
-      data.push(tmp.value);
-      tmp = tmp.next;
+    while (temp !== null) {
+      data.push(temp.value);
+      temp = temp.next;
     }
 
     console.log(data.join("->"));

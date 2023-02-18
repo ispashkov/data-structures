@@ -43,7 +43,7 @@ export class DoublyLinkedList {
   public pop = (): Node | undefined => {
     if (this.length === 0) return;
 
-    const tmp = this.tail;
+    const temp = this.tail;
 
     if (this.length === 1) {
       this.head = null;
@@ -51,12 +51,12 @@ export class DoublyLinkedList {
     } else {
       this.tail = this.tail!.prev;
       this.tail!.next = null;
-      tmp!.prev = null;
+      temp!.prev = null;
     }
 
     this.length--;
 
-    return tmp!;
+    return temp!;
   };
 
   public unshift = (value: number): DoublyLinkedList => {
@@ -79,7 +79,7 @@ export class DoublyLinkedList {
   public shift = (): Node | undefined => {
     if (this.length === 0) return;
 
-    const tmp = this.head;
+    const temp = this.head;
 
     if (this.length === 1) {
       this.head = null;
@@ -87,32 +87,32 @@ export class DoublyLinkedList {
     } else {
       this.head = this.head!.next;
       this.head!.prev = null;
-      tmp!.next = null;
+      temp!.next = null;
     }
 
     this.length--;
 
-    return tmp!;
+    return temp!;
   };
 
   public get = (index: number): Node | null | undefined => {
     if (index < 0 || index > this.length) return;
 
-    let tmp = this.head;
+    let temp = this.head;
 
     if (index < this.length / 2) {
       for (let i = 0; i < index; i++) {
-        tmp = tmp!.next;
+        temp = temp!.next;
       }
     } else {
-      tmp = this.tail;
+      temp = this.tail;
 
       for (let i = this.length - 1; i > index; i--) {
-        tmp = tmp!.prev;
+        temp = temp!.prev;
       }
     }
 
-    return tmp;
+    return temp;
   };
 
   public set = (index: number, value: number): boolean => {
@@ -165,12 +165,12 @@ export class DoublyLinkedList {
       return true;
     }
 
-    const tmp = this.get(index)!;
+    const temp = this.get(index)!;
 
-    tmp.prev!.next = tmp.next;
-    tmp.next!.prev = tmp.prev;
-    tmp.prev = null;
-    tmp.next = null;
+    temp.prev!.next = temp.next;
+    temp.next!.prev = temp.prev;
+    temp.prev = null;
+    temp.next = null;
 
     this.length--;
 
@@ -178,12 +178,12 @@ export class DoublyLinkedList {
   };
 
   public print = (): void => {
-    let tmp = this.head;
+    let temp = this.head;
     let data = [];
 
-    while (tmp !== null) {
-      data.push(tmp.value);
-      tmp = tmp.next;
+    while (temp !== null) {
+      data.push(temp.value);
+      temp = temp.next;
     }
 
     console.log(data.join("<->"));

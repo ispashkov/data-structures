@@ -42,12 +42,12 @@ export class LinkedList {
   public pop = (): Node | undefined => {
     if (!this.head) return undefined;
 
-    let tmp = this.head;
+    let temp = this.head;
     let pre = this.head;
 
-    while (tmp.next) {
-      pre = tmp;
-      tmp = tmp.next;
+    while (temp.next) {
+      pre = temp;
+      temp = temp.next;
     }
 
     this.tail = pre;
@@ -81,7 +81,7 @@ export class LinkedList {
   public shift = (): Node | undefined => {
     if (!this.head) return undefined;
 
-    let tmp = this.head;
+    let temp = this.head;
     this.head = this.head.next;
     this.length--;
 
@@ -89,21 +89,21 @@ export class LinkedList {
       this.tail = null;
     }
 
-    tmp.next = null;
+    temp.next = null;
 
-    return tmp;
+    return temp;
   };
 
   public get = (index: number): Node | null | undefined => {
     if (index < 0 || index > this.length) return undefined;
 
-    let tmp = this.head;
+    let temp = this.head;
 
     for (let i = 0; i < index; i++) {
-      tmp = tmp!.next;
+      temp = temp!.next;
     }
 
-    return tmp;
+    return temp;
   };
 
   public set = (index: number, value: number): boolean => {
@@ -172,30 +172,30 @@ export class LinkedList {
   };
 
   public reverse = (): LinkedList => {
-    let tmp = this.head;
+    let temp = this.head;
     this.head = this.tail;
-    this.tail = tmp;
+    this.tail = temp;
 
-    let next = tmp!.next;
+    let next = temp!.next;
     let prev = null;
 
     for (let i = 0; i < this.length; i++) {
-      next = tmp!.next;
-      tmp!.next = prev;
-      prev = tmp;
-      tmp = next;
+      next = temp!.next;
+      temp!.next = prev;
+      prev = temp;
+      temp = next;
     }
 
     return this;
   };
 
   public print = (): void => {
-    let tmp = this.head;
+    let temp = this.head;
     let data = [];
 
-    while (tmp !== null) {
-      data.push(tmp.value);
-      tmp = tmp.next;
+    while (temp !== null) {
+      data.push(temp.value);
+      temp = temp.next;
     }
 
     console.log(data.join("->"));
