@@ -100,9 +100,7 @@ export class LinkedList {
     let tmp = this.head;
 
     for (let i = 0; i < index; i++) {
-      if (tmp) {
-        tmp = tmp.next;
-      }
+      tmp = tmp!.next;
     }
 
     return tmp;
@@ -119,7 +117,7 @@ export class LinkedList {
     return false;
   };
 
-  public insert = (index: number, value: number) => {
+  public insert = (index: number, value: number): boolean => {
     if (index < 0 || index > this.length) return false;
 
     if (index === 0) {

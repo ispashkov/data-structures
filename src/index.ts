@@ -1,7 +1,10 @@
-import { DoublyLinkedList } from "./DoublyLinkedList";
+import { Queue } from "./Queue";
 
-const list = new DoublyLinkedList(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.print();
+const queue = new Queue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.print();
+queue.enqueue(4);
+queue.print();
+queue.dequeue();
+queue.print();
