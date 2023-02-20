@@ -1,12 +1,4 @@
-import { BinarySearchTree } from "./BinarySearchTree";
+import { bubbleSort } from "./sortings/bubble-sort";
 
-const tree = new BinarySearchTree();
-tree.insert(47);
-tree.insert(21);
-tree.insert(76);
-tree.insert(18);
-tree.insert(27);
-tree.insert(52);
-tree.insert(82);
-tree.print();
-console.log(tree.DFSPostOrder());
+const test = [10, 5, 3, 9, 12, 2, 1];
+console.log(bubbleSort(test));
