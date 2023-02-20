@@ -1,7 +1,7 @@
-import { BinarySearchTree } from "./BinarySearchTree";
+import { HashTable } from "./HashTable";
 
-const bst = new BinarySearchTree();
-bst.insert(20);
-bst.insert(10);
-bst.insert(41);
-console.log(bst.contains(41));
+const ht = new HashTable(7);
+ht.set("lumber", 70);
+ht.set("washers", 50);
+ht.set("bolts", 1400);
+ht.print();
