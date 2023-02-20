@@ -1,15 +1,12 @@
-import { Graph } from "./Graph";
+import { BinarySearchTree } from "./BinarySearchTree";
 
-const graph = new Graph();
-graph.addVertex("A");
-graph.addVertex("B");
-graph.addVertex("C");
-graph.addVertex("D");
-graph.addEdge("A", "B");
-graph.addEdge("A", "C");
-graph.addEdge("A", "D");
-graph.addEdge("B", "D");
-graph.addEdge("C", "D");
-graph.print();
-graph.removeVertex("A");
-graph.print();
+const tree = new BinarySearchTree();
+tree.insert(47);
+tree.insert(21);
+tree.insert(76);
+tree.insert(18);
+tree.insert(27);
+tree.insert(52);
+tree.insert(82);
+tree.print();
+console.log(tree.DFSPostOrder());

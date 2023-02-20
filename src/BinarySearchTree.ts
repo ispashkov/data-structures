@@ -65,6 +65,65 @@ export class BinarySearchTree {
     return false;
   };
 
+  public BFS = (): number[] => {
+    let currentNode = this.root!;
+    const queue: Node[] = [];
+    const results: number[] = [];
+
+    queue.push(currentNode);
+
+    while (queue.length) {
+      currentNode = queue.shift()!;
+      results.push(currentNode.value);
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+
+    return results;
+  };
+
+  public DFSPreOreder = () => {
+    const result: Number[] = [];
+
+    function traverse(currentNode: Node) {
+      result.push(currentNode.value);
+      if (currentNode.left) traverse(currentNode.left);
+      if (currentNode.right) traverse(currentNode.right);
+    }
+
+    traverse(this.root!);
+
+    return result;
+  };
+
+  public DFSInOrder = () => {
+    const result: Number[] = [];
+
+    function traverse(currentNode: Node) {
+      if (currentNode.left) traverse(currentNode.left);
+      result.push(currentNode.value);
+      if (currentNode.right) traverse(currentNode.right);
+    }
+
+    traverse(this.root!);
+
+    return result;
+  };
+
+  public DFSPostOrder = () => {
+    const result: Number[] = [];
+
+    function traverse(currentNode: Node) {
+      if (currentNode.left) traverse(currentNode.left);
+      if (currentNode.right) traverse(currentNode.right);
+      result.push(currentNode.value);
+    }
+
+    traverse(this.root!);
+
+    return result;
+  };
+
   public print = (): void => {
     console.log(JSON.stringify(this.root, null, 2));
   };
