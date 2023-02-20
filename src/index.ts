@@ -1,7 +1,15 @@
-import { HashTable } from "./HashTable";
+import { Graph } from "./Graph";
 
-const ht = new HashTable(7);
-ht.set("lumber", 70);
-ht.set("washers", 50);
-ht.set("bolts", 1400);
-ht.print();
+const graph = new Graph();
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("A", "D");
+graph.addEdge("B", "D");
+graph.addEdge("C", "D");
+graph.print();
+graph.removeVertex("A");
+graph.print();
